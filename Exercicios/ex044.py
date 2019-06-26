@@ -10,13 +10,18 @@ CONDIÇÃO DE PAGAMENTO:
 """
 selecao=0
 produto=float(input('Digite o valor do produto R$:'))
-formaPag=('Digite a forma de pagamento:\n1- Dinheiro.\n2- Cheque.\n3- Cartão.')
+formaPag=int(input('Digite a forma de pagamento:\n1- Dinheiro.\n2- Cheque.\n3- Cartão.'))
 if formaPag == 1:
-    print('O valor do produto R${} com 10% de desconto ;)'.format(produto-(produto*0.10)))
+    print('O valor do produto R${:.2f} com 10% de desconto ;)'.format(produto-(produto*0.10)))
 elif( formaPag == 2 ):
-    print('O valor do produto R${} com 10% de desconto ;)'.format(produto - (produto * 0.10)))
-elif( formaPag == 3 and selecao == 1 and selecao == 2):
-    selecao=int(input('Em quantas vez deseja fazer? Até 2x sem Juros'))
-    print('O valor do produto R${} em {} vezes em juros ;)'.format(produto,selecao))
+    print('O valor do produto R${:.2f} com 10% de desconto ;)'.format(produto - (produto * 0.10)))
+elif( formaPag == 3 ):
+    selecao=int(input('Em quantas vez deseja fazer? Até 2x sem Juros\nDigite a quantidade de parcela:'))
+    if selecao >= 1 and selecao <=2:
+            produto=(produto/selecao)
+            print('Prazo selecionado, número de parcelas:{} vezes, valor das parcelas R${:.2f}, sem juros valor total R${:.2f} ;)'.format(selecao,produto,produto*selecao))
+    else:
+        produto=produto+(produto*0.20)
+        print('Prazo selecionado, número de parcelas:{} vezes, total das parcelas R${:.2f} com 20% de juros valor total R${:.2f}'.format(selecao,produto/selecao,produto))
 else:
-    print('O valor do produto R${} e o número:{} de vezes, com 20% de juros ;)'.format(produto + (produto * 0.20)))
+   print('fim')
