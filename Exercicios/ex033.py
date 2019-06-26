@@ -6,6 +6,7 @@ A=int(input('Número 1: '))
 B=int(input('Número 2: '))
 C=int(input('Número 3: '))
 
+
 if (A >= B & B >= C):
     print('Número:{} é maior do que {}, e também maior do que {}.'.format(A,B,C))
 elif(B >= A & A >= C):
@@ -18,4 +19,3 @@ elif(B >= C & C >= A):
     print('Número:{} é maior do que {}, e támbem maior do que {}'.format(B,C,A))
 else:
     print('Número:{} é maior do que {}, e támbem maior do que {}'.format(A,C,B))
-
